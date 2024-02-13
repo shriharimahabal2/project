@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <div class="main">
+        <div class="container about">
+            <h1 class="m-5">Welcome to the Page!</h1>
+            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png" alt="">
+            <h1 class="m-4">About us</h2>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores sapiente placeat
+                            voluptates, voluptatibus magnam officiis cupiditate expedita doloribus non neque quam rem
+                            sed repudiandae labore, iste vero recusandae veritatis earum?
+                            Quia molestiae harum rerum beatae cupiditate labore architecto expedita officiis tempore
+                            laborum est error mollitia fugit earum eos magnam, deserunt culpa, nihil similique, officia
+                            quidem non. Natus amet tempore repellat?
+                            Cum nam mollitia eos, exercitationem enim eaque commodi officia dolorum dolor provident
+                            eveniet, et est labore? Sapiente, laboriosam minus tempora delectus, et nihil, excepturi
+                            dolore laborum recusandae unde maxime! Mollitia.
+                            Incidunt quaerat quo reprehenderit deserunt? Vel molestias asperiores fuga aut, deleniti
+                            sapiente facere illo voluptatibus, id ducimus veniam, voluptates quidem velit consectetur.
+                            Dolores maiores, explicabo voluptatibus voluptate dolore tempora commodi!
+                            Reiciendis ipsa consectetur officia autem animi minus nesciunt aut sequi dignissimos
+                            deserunt. Quidem corporis ad itaque dolore molestias animi quam ipsum, hic repudiandae
+                            accusamus architecto inventore! Sint quod iste facilis.</p>
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid"
+                            src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlJTIwd29ya2luZ3xlbnwwfHwwfHx8MA%3D%3D"
+                            alt="">
+                    </div>
+                </div>
+        </div>
+        <div class="container applications">
+            <h1>Open Positions</h1>
+            {% for data in data %}
+            <div class="row m-3 border-bottom">
+                <div class="col-11">
+                    <h2>{{data['title']}}</h2>
+                    <b>Location:</b> {{data['location']}}<br>
+                    <b>Salary: </b> {{data['salary']}}
+                </div>
+                <div class="col-1 align-self-center">
+                    <button class="btn btn-primary d-inline-flex align-items-center" type="button">
+                        Apply
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+</html>
